@@ -82,7 +82,7 @@ testpath==0.4.4
 tomli==2.0.1
 tornado==6.1
 traitlets==5.0.5
-urllib3==1.26.4
+urllib3==1.26.5
 userpath==1.7.0
 wcwidth==0.2.5
 webencodings==0.5.1
