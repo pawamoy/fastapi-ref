@@ -1,0 +1,2315 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="API docs for FastAPI">
+      
+      
+      
+        <link rel="canonical" href="https://pawamoy.github.io/fastapi-ref/openapi/utils/">
+      
+      <link rel="icon" href="../../img/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.2.15">
+    
+    
+      
+        <title>utils - FastAPI Reference</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.c382b1dc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cc9b2e1e.min.css">
+        
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+      <link rel="stylesheet" href="../../css/custom.css">
+    
+      <link rel="stylesheet" href="../../css/mkdocstrings.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#fastapi.openapi.utils" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="FastAPI Reference" class="md-header__button md-logo" aria-label="FastAPI Reference" data-md-component="logo">
+      
+  <img src="../../img/icon-white.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            FastAPI Reference
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              utils
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="amber"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7M9 21a1 1 0 0 0 1 1h4a1 1 0 0 0 1-1v-1H9v1Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="amber"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a7 7 0 0 1 7 7c0 2.38-1.19 4.47-3 5.74V17a1 1 0 0 1-1 1H9a1 1 0 0 1-1-1v-2.26C6.19 13.47 5 11.38 5 9a7 7 0 0 1 7-7M9 21v-1h6v1a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1m3-17a5 5 0 0 0-5 5c0 2.05 1.23 3.81 3 4.58V16h4v-2.42c1.77-.77 3-2.53 3-4.58a5 5 0 0 0-5-5Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/pawamoy/fastapi-ref" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    pawamoy/fastapi-ref
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="FastAPI Reference" class="md-nav__button md-logo" aria-label="FastAPI Reference" data-md-component="logo">
+      
+  <img src="../../img/icon-white.svg" alt="logo">
+
+    </a>
+    FastAPI Reference
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/pawamoy/fastapi-ref" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M186.1 328.7c0 20.9-10.9 55.1-36.7 55.1s-36.7-34.2-36.7-55.1 10.9-55.1 36.7-55.1 36.7 34.2 36.7 55.1zM480 278.2c0 31.9-3.2 65.7-17.5 95-37.9 76.6-142.1 74.8-216.7 74.8-75.8 0-186.2 2.7-225.6-74.8-14.6-29-20.2-63.1-20.2-95 0-41.9 13.9-81.5 41.5-113.6-5.2-15.8-7.7-32.4-7.7-48.8 0-21.5 4.9-32.3 14.6-51.8 45.3 0 74.3 9 108.8 36 29-6.9 58.8-10 88.7-10 27 0 54.2 2.9 80.4 9.2 34-26.7 63-35.2 107.8-35.2 9.8 19.5 14.6 30.3 14.6 51.8 0 16.4-2.6 32.7-7.7 48.2 27.5 32.4 39 72.3 39 114.2zm-64.3 50.5c0-43.9-26.7-82.6-73.5-82.6-18.9 0-37 3.4-56 6-14.9 2.3-29.8 3.2-45.1 3.2-15.2 0-30.1-.9-45.1-3.2-18.7-2.6-37-6-56-6-46.8 0-73.5 38.7-73.5 82.6 0 87.8 80.4 101.3 150.4 101.3h48.2c70.3 0 150.6-13.4 150.6-101.3zm-82.6-55.1c-25.8 0-36.7 34.2-36.7 55.1s10.9 55.1 36.7 55.1 36.7-34.2 36.7-55.1-10.9-55.1-36.7-55.1z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    pawamoy/fastapi-ref
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../applications/" class="md-nav__link">
+        applications
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../concurrency/" class="md-nav__link">
+        concurrency
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../datastructures/" class="md-nav__link">
+        datastructures
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../dependencies/">dependencies</a>
+          
+            <label for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="dependencies" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          dependencies
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dependencies/models/" class="md-nav__link">
+        models
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dependencies/utils/" class="md-nav__link">
+        utils
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../encoders/" class="md-nav__link">
+        encoders
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exception_handlers/" class="md-nav__link">
+        exception_handlers
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exceptions/" class="md-nav__link">
+        exceptions
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../logger/" class="md-nav__link">
+        logger
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../middleware/">middleware</a>
+          
+            <label for="__nav_9">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="middleware" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          middleware
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../middleware/asyncexitstack/" class="md-nav__link">
+        asyncexitstack
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../middleware/cors/" class="md-nav__link">
+        cors
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../middleware/gzip/" class="md-nav__link">
+        gzip
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../middleware/httpsredirect/" class="md-nav__link">
+        httpsredirect
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../middleware/trustedhost/" class="md-nav__link">
+        trustedhost
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../middleware/wsgi/" class="md-nav__link">
+        wsgi
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" checked>
+      
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../">openapi</a>
+          
+            <label for="__nav_10">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="openapi" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          openapi
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../constants/" class="md-nav__link">
+        constants
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../docs/" class="md-nav__link">
+        docs
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../models/" class="md-nav__link">
+        models
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          utils
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        utils
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fastapi.openapi.utils" class="md-nav__link">
+    fastapi.openapi.utils
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fastapi.openapi.utils.status_code_ranges" class="md-nav__link">
+    status_code_ranges
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fastapi.openapi.utils.validation_error_definition" class="md-nav__link">
+    validation_error_definition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fastapi.openapi.utils.validation_error_response_definition" class="md-nav__link">
+    validation_error_response_definition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fastapi.openapi.utils.generate_operation_id" class="md-nav__link">
+    generate_operation_id()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fastapi.openapi.utils.generate_operation_summary" class="md-nav__link">
+    generate_operation_summary()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fastapi.openapi.utils.get_flat_models_from_routes" class="md-nav__link">
+    get_flat_models_from_routes()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fastapi.openapi.utils.get_openapi" class="md-nav__link">
+    get_openapi()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fastapi.openapi.utils.get_openapi_operation_metadata" class="md-nav__link">
+    get_openapi_operation_metadata()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fastapi.openapi.utils.get_openapi_operation_parameters" class="md-nav__link">
+    get_openapi_operation_parameters()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fastapi.openapi.utils.get_openapi_operation_request_body" class="md-nav__link">
+    get_openapi_operation_request_body()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fastapi.openapi.utils.get_openapi_path" class="md-nav__link">
+    get_openapi_path()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fastapi.openapi.utils.get_openapi_security_definitions" class="md-nav__link">
+    get_openapi_security_definitions()
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../param_functions/" class="md-nav__link">
+        param_functions
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../params/" class="md-nav__link">
+        params
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../requests/" class="md-nav__link">
+        requests
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../responses/" class="md-nav__link">
+        responses
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../routing/" class="md-nav__link">
+        routing
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_16" type="checkbox" id="__nav_16" >
+      
+      
+      
+      
+        
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="../../security/">security</a>
+          
+            <label for="__nav_16">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="security" data-md-level="1">
+        <label class="md-nav__title" for="__nav_16">
+          <span class="md-nav__icon md-icon"></span>
+          security
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../security/api_key/" class="md-nav__link">
+        api_key
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../security/base/" class="md-nav__link">
+        base
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../security/http/" class="md-nav__link">
+        http
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../security/oauth2/" class="md-nav__link">
+        oauth2
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../security/open_id_connect_url/" class="md-nav__link">
+        open_id_connect_url
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../security/utils/" class="md-nav__link">
+        utils
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../staticfiles/" class="md-nav__link">
+        staticfiles
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../templating/" class="md-nav__link">
+        templating
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../testclient/" class="md-nav__link">
+        testclient
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../types/" class="md-nav__link">
+        types
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../utils/" class="md-nav__link">
+        utils
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../websockets/" class="md-nav__link">
+        websockets
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fastapi.openapi.utils" class="md-nav__link">
+    fastapi.openapi.utils
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fastapi.openapi.utils.status_code_ranges" class="md-nav__link">
+    status_code_ranges
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fastapi.openapi.utils.validation_error_definition" class="md-nav__link">
+    validation_error_definition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fastapi.openapi.utils.validation_error_response_definition" class="md-nav__link">
+    validation_error_response_definition
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fastapi.openapi.utils.generate_operation_id" class="md-nav__link">
+    generate_operation_id()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fastapi.openapi.utils.generate_operation_summary" class="md-nav__link">
+    generate_operation_summary()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fastapi.openapi.utils.get_flat_models_from_routes" class="md-nav__link">
+    get_flat_models_from_routes()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fastapi.openapi.utils.get_openapi" class="md-nav__link">
+    get_openapi()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fastapi.openapi.utils.get_openapi_operation_metadata" class="md-nav__link">
+    get_openapi_operation_metadata()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fastapi.openapi.utils.get_openapi_operation_parameters" class="md-nav__link">
+    get_openapi_operation_parameters()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fastapi.openapi.utils.get_openapi_operation_request_body" class="md-nav__link">
+    get_openapi_operation_request_body()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fastapi.openapi.utils.get_openapi_path" class="md-nav__link">
+    get_openapi_path()
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fastapi.openapi.utils.get_openapi_security_definitions" class="md-nav__link">
+    get_openapi_security_definitions()
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+  <a href="https://github.com/pawamoy/edit/master/docs/.venv/lib/python3.9/site-packages/fastapi/openapi/utils.py" title="Edit this page" class="md-content__button md-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+
+  <h1>utils</h1>
+
+<div class="doc doc-object doc-module">
+
+<a id="fastapi.openapi.utils"></a>
+    <div class="doc doc-contents first">
+
+
+
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h2 id="fastapi.openapi.utils.status_code_ranges" class="doc doc-heading">
+status_code_ranges
+
+  <span class="doc doc-properties">
+      <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
+  </span>
+
+<a href="#fastapi.openapi.utils.status_code_ranges" class="headerlink" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="n">status_code_ranges</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;1XX&quot;</span><span class="p">:</span> <span class="s2">&quot;Information&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;2XX&quot;</span><span class="p">:</span> <span class="s2">&quot;Success&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;3XX&quot;</span><span class="p">:</span> <span class="s2">&quot;Redirection&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;4XX&quot;</span><span class="p">:</span> <span class="s2">&quot;Client Error&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;5XX&quot;</span><span class="p">:</span> <span class="s2">&quot;Server Error&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;DEFAULT&quot;</span><span class="p">:</span> <span class="s2">&quot;Default Response&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h2 id="fastapi.openapi.utils.validation_error_definition" class="doc doc-heading">
+validation_error_definition
+
+  <span class="doc doc-properties">
+      <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
+  </span>
+
+<a href="#fastapi.openapi.utils.validation_error_definition" class="headerlink" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="n">validation_error_definition</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;ValidationError&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;loc&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Location&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;array&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;items&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;anyOf&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">},</span>
+                    <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;integer&quot;</span><span class="p">},</span>
+                <span class="p">]</span>
+            <span class="p">},</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;msg&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Message&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">},</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Error Type&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">},</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;required&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;loc&quot;</span><span class="p">,</span> <span class="s2">&quot;msg&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">],</span>
+<span class="p">}</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-attribute">
+
+
+
+<h2 id="fastapi.openapi.utils.validation_error_response_definition" class="doc doc-heading">
+validation_error_response_definition
+
+  <span class="doc doc-properties">
+      <small class="doc doc-label doc-label-module-attribute"><code>module-attribute</code></small>
+  </span>
+
+<a href="#fastapi.openapi.utils.validation_error_response_definition" class="headerlink" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="n">validation_error_response_definition</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;HTTPValidationError&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;properties&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s2">&quot;detail&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Detail&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;array&quot;</span><span class="p">,</span>
+            <span class="s2">&quot;items&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="s2">&quot;$ref&quot;</span><span class="p">:</span> <span class="n">REF_PREFIX</span> <span class="o">+</span> <span class="s2">&quot;ValidationError&quot;</span>
+            <span class="p">},</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+<span class="p">}</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+    </div>
+
+  </div>
+
+
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="fastapi.openapi.utils.generate_operation_id" class="doc doc-heading">
+generate_operation_id
+
+
+<a href="#fastapi.openapi.utils.generate_operation_id" class="headerlink" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="n">generate_operation_id</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">route</span><span class="p">,</span> <span class="n">method</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+
+        <details class="quote">
+          <summary>Source code in <code>fastapi/openapi/utils.py</code></summary>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">148</span>
+<span class="normal">149</span>
+<span class="normal">150</span>
+<span class="normal">151</span>
+<span class="normal">152</span>
+<span class="normal">153</span>
+<span class="normal">154</span>
+<span class="normal">155</span>
+<span class="normal">156</span>
+<span class="normal">157</span>
+<span class="normal">158</span>
+<span class="normal">159</span>
+<span class="normal">160</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">generate_operation_id</span><span class="p">(</span>
+    <span class="o">*</span><span class="p">,</span> <span class="n">route</span><span class="p">:</span> <span class="n">routing</span><span class="o">.</span><span class="n">APIRoute</span><span class="p">,</span> <span class="n">method</span><span class="p">:</span> <span class="nb">str</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>  <span class="c1"># pragma: nocover</span>
+    <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span>
+        <span class="s2">&quot;fastapi.openapi.utils.generate_operation_id() was deprecated, &quot;</span>
+        <span class="s2">&quot;it is not used internally, and will be removed soon&quot;</span><span class="p">,</span>
+        <span class="ne">DeprecationWarning</span><span class="p">,</span>
+        <span class="n">stacklevel</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+    <span class="p">)</span>
+    <span class="k">if</span> <span class="n">route</span><span class="o">.</span><span class="n">operation_id</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">route</span><span class="o">.</span><span class="n">operation_id</span>
+    <span class="n">path</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="n">route</span><span class="o">.</span><span class="n">path_format</span>
+    <span class="k">return</span> <span class="n">generate_operation_id_for_path</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">route</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="n">path</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="fastapi.openapi.utils.generate_operation_summary" class="doc doc-heading">
+generate_operation_summary
+
+
+<a href="#fastapi.openapi.utils.generate_operation_summary" class="headerlink" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="n">generate_operation_summary</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">route</span><span class="p">,</span> <span class="n">method</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+
+        <details class="quote">
+          <summary>Source code in <code>fastapi/openapi/utils.py</code></summary>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">163</span>
+<span class="normal">164</span>
+<span class="normal">165</span>
+<span class="normal">166</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">generate_operation_summary</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">route</span><span class="p">:</span> <span class="n">routing</span><span class="o">.</span><span class="n">APIRoute</span><span class="p">,</span> <span class="n">method</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">route</span><span class="o">.</span><span class="n">summary</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">route</span><span class="o">.</span><span class="n">summary</span>
+    <span class="k">return</span> <span class="n">route</span><span class="o">.</span><span class="n">name</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;_&quot;</span><span class="p">,</span> <span class="s2">&quot; &quot;</span><span class="p">)</span><span class="o">.</span><span class="n">title</span><span class="p">()</span>
+</code></pre></div></td></tr></table></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="fastapi.openapi.utils.get_flat_models_from_routes" class="doc doc-heading">
+get_flat_models_from_routes
+
+
+<a href="#fastapi.openapi.utils.get_flat_models_from_routes" class="headerlink" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="n">get_flat_models_from_routes</span><span class="p">(</span><span class="n">routes</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+
+        <details class="quote">
+          <summary>Source code in <code>fastapi/openapi/utils.py</code></summary>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">356</span>
+<span class="normal">357</span>
+<span class="normal">358</span>
+<span class="normal">359</span>
+<span class="normal">360</span>
+<span class="normal">361</span>
+<span class="normal">362</span>
+<span class="normal">363</span>
+<span class="normal">364</span>
+<span class="normal">365</span>
+<span class="normal">366</span>
+<span class="normal">367</span>
+<span class="normal">368</span>
+<span class="normal">369</span>
+<span class="normal">370</span>
+<span class="normal">371</span>
+<span class="normal">372</span>
+<span class="normal">373</span>
+<span class="normal">374</span>
+<span class="normal">375</span>
+<span class="normal">376</span>
+<span class="normal">377</span>
+<span class="normal">378</span>
+<span class="normal">379</span>
+<span class="normal">380</span>
+<span class="normal">381</span>
+<span class="normal">382</span>
+<span class="normal">383</span>
+<span class="normal">384</span>
+<span class="normal">385</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_flat_models_from_routes</span><span class="p">(</span>
+    <span class="n">routes</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">BaseRoute</span><span class="p">],</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Set</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">Type</span><span class="p">[</span><span class="n">BaseModel</span><span class="p">],</span> <span class="n">Type</span><span class="p">[</span><span class="n">Enum</span><span class="p">]]]:</span>
+    <span class="n">body_fields_from_routes</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">ModelField</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">responses_from_routes</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">ModelField</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">request_fields_from_routes</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">ModelField</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">callback_flat_models</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">Type</span><span class="p">[</span><span class="n">BaseModel</span><span class="p">],</span> <span class="n">Type</span><span class="p">[</span><span class="n">Enum</span><span class="p">]]]</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">route</span> <span class="ow">in</span> <span class="n">routes</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">route</span><span class="p">,</span> <span class="s2">&quot;include_in_schema&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">isinstance</span><span class="p">(</span>
+            <span class="n">route</span><span class="p">,</span> <span class="n">routing</span><span class="o">.</span><span class="n">APIRoute</span>
+        <span class="p">):</span>
+            <span class="k">if</span> <span class="n">route</span><span class="o">.</span><span class="n">body_field</span><span class="p">:</span>
+                <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
+                    <span class="n">route</span><span class="o">.</span><span class="n">body_field</span><span class="p">,</span> <span class="n">ModelField</span>
+                <span class="p">),</span> <span class="s2">&quot;A request body must be a Pydantic Field&quot;</span>
+                <span class="n">body_fields_from_routes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">route</span><span class="o">.</span><span class="n">body_field</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">route</span><span class="o">.</span><span class="n">response_field</span><span class="p">:</span>
+                <span class="n">responses_from_routes</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">route</span><span class="o">.</span><span class="n">response_field</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">route</span><span class="o">.</span><span class="n">response_fields</span><span class="p">:</span>
+                <span class="n">responses_from_routes</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">route</span><span class="o">.</span><span class="n">response_fields</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+            <span class="k">if</span> <span class="n">route</span><span class="o">.</span><span class="n">callbacks</span><span class="p">:</span>
+                <span class="n">callback_flat_models</span> <span class="o">|=</span> <span class="n">get_flat_models_from_routes</span><span class="p">(</span><span class="n">route</span><span class="o">.</span><span class="n">callbacks</span><span class="p">)</span>
+            <span class="n">params</span> <span class="o">=</span> <span class="n">get_flat_params</span><span class="p">(</span><span class="n">route</span><span class="o">.</span><span class="n">dependant</span><span class="p">)</span>
+            <span class="n">request_fields_from_routes</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+
+    <span class="n">flat_models</span> <span class="o">=</span> <span class="n">callback_flat_models</span> <span class="o">|</span> <span class="n">get_flat_models_from_fields</span><span class="p">(</span>
+        <span class="n">body_fields_from_routes</span> <span class="o">+</span> <span class="n">responses_from_routes</span> <span class="o">+</span> <span class="n">request_fields_from_routes</span><span class="p">,</span>
+        <span class="n">known_models</span><span class="o">=</span><span class="nb">set</span><span class="p">(),</span>
+    <span class="p">)</span>
+    <span class="k">return</span> <span class="n">flat_models</span>
+</code></pre></div></td></tr></table></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="fastapi.openapi.utils.get_openapi" class="doc doc-heading">
+get_openapi
+
+
+<a href="#fastapi.openapi.utils.get_openapi" class="headerlink" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="n">get_openapi</span><span class="p">(</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">title</span><span class="p">,</span>
+    <span class="n">version</span><span class="p">,</span>
+    <span class="n">openapi_version</span><span class="o">=</span><span class="s2">&quot;3.0.2&quot;</span><span class="p">,</span>
+    <span class="n">description</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">routes</span><span class="p">,</span>
+    <span class="n">tags</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">servers</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">terms_of_service</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">contact</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">license_info</span><span class="o">=</span><span class="kc">None</span>
+<span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+
+        <details class="quote">
+          <summary>Source code in <code>fastapi/openapi/utils.py</code></summary>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">388</span>
+<span class="normal">389</span>
+<span class="normal">390</span>
+<span class="normal">391</span>
+<span class="normal">392</span>
+<span class="normal">393</span>
+<span class="normal">394</span>
+<span class="normal">395</span>
+<span class="normal">396</span>
+<span class="normal">397</span>
+<span class="normal">398</span>
+<span class="normal">399</span>
+<span class="normal">400</span>
+<span class="normal">401</span>
+<span class="normal">402</span>
+<span class="normal">403</span>
+<span class="normal">404</span>
+<span class="normal">405</span>
+<span class="normal">406</span>
+<span class="normal">407</span>
+<span class="normal">408</span>
+<span class="normal">409</span>
+<span class="normal">410</span>
+<span class="normal">411</span>
+<span class="normal">412</span>
+<span class="normal">413</span>
+<span class="normal">414</span>
+<span class="normal">415</span>
+<span class="normal">416</span>
+<span class="normal">417</span>
+<span class="normal">418</span>
+<span class="normal">419</span>
+<span class="normal">420</span>
+<span class="normal">421</span>
+<span class="normal">422</span>
+<span class="normal">423</span>
+<span class="normal">424</span>
+<span class="normal">425</span>
+<span class="normal">426</span>
+<span class="normal">427</span>
+<span class="normal">428</span>
+<span class="normal">429</span>
+<span class="normal">430</span>
+<span class="normal">431</span>
+<span class="normal">432</span>
+<span class="normal">433</span>
+<span class="normal">434</span>
+<span class="normal">435</span>
+<span class="normal">436</span>
+<span class="normal">437</span>
+<span class="normal">438</span>
+<span class="normal">439</span>
+<span class="normal">440</span>
+<span class="normal">441</span>
+<span class="normal">442</span>
+<span class="normal">443</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_openapi</span><span class="p">(</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">title</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">version</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span>
+    <span class="n">openapi_version</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="s2">&quot;3.0.2&quot;</span><span class="p">,</span>
+    <span class="n">description</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">routes</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">BaseRoute</span><span class="p">],</span>
+    <span class="n">tags</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">servers</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">terms_of_service</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">contact</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+    <span class="n">license_info</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+    <span class="n">info</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="n">title</span><span class="p">,</span> <span class="s2">&quot;version&quot;</span><span class="p">:</span> <span class="n">version</span><span class="p">}</span>
+    <span class="k">if</span> <span class="n">description</span><span class="p">:</span>
+        <span class="n">info</span><span class="p">[</span><span class="s2">&quot;description&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">description</span>
+    <span class="k">if</span> <span class="n">terms_of_service</span><span class="p">:</span>
+        <span class="n">info</span><span class="p">[</span><span class="s2">&quot;termsOfService&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">terms_of_service</span>
+    <span class="k">if</span> <span class="n">contact</span><span class="p">:</span>
+        <span class="n">info</span><span class="p">[</span><span class="s2">&quot;contact&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">contact</span>
+    <span class="k">if</span> <span class="n">license_info</span><span class="p">:</span>
+        <span class="n">info</span><span class="p">[</span><span class="s2">&quot;license&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">license_info</span>
+    <span class="n">output</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;openapi&quot;</span><span class="p">:</span> <span class="n">openapi_version</span><span class="p">,</span> <span class="s2">&quot;info&quot;</span><span class="p">:</span> <span class="n">info</span><span class="p">}</span>
+    <span class="k">if</span> <span class="n">servers</span><span class="p">:</span>
+        <span class="n">output</span><span class="p">[</span><span class="s2">&quot;servers&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">servers</span>
+    <span class="n">components</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">paths</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">operation_ids</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+    <span class="n">flat_models</span> <span class="o">=</span> <span class="n">get_flat_models_from_routes</span><span class="p">(</span><span class="n">routes</span><span class="p">)</span>
+    <span class="n">model_name_map</span> <span class="o">=</span> <span class="n">get_model_name_map</span><span class="p">(</span><span class="n">flat_models</span><span class="p">)</span>
+    <span class="n">definitions</span> <span class="o">=</span> <span class="n">get_model_definitions</span><span class="p">(</span>
+        <span class="n">flat_models</span><span class="o">=</span><span class="n">flat_models</span><span class="p">,</span> <span class="n">model_name_map</span><span class="o">=</span><span class="n">model_name_map</span>
+    <span class="p">)</span>
+    <span class="k">for</span> <span class="n">route</span> <span class="ow">in</span> <span class="n">routes</span><span class="p">:</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">route</span><span class="p">,</span> <span class="n">routing</span><span class="o">.</span><span class="n">APIRoute</span><span class="p">):</span>
+            <span class="n">result</span> <span class="o">=</span> <span class="n">get_openapi_path</span><span class="p">(</span>
+                <span class="n">route</span><span class="o">=</span><span class="n">route</span><span class="p">,</span> <span class="n">model_name_map</span><span class="o">=</span><span class="n">model_name_map</span><span class="p">,</span> <span class="n">operation_ids</span><span class="o">=</span><span class="n">operation_ids</span>
+            <span class="p">)</span>
+            <span class="k">if</span> <span class="n">result</span><span class="p">:</span>
+                <span class="n">path</span><span class="p">,</span> <span class="n">security_schemes</span><span class="p">,</span> <span class="n">path_definitions</span> <span class="o">=</span> <span class="n">result</span>
+                <span class="k">if</span> <span class="n">path</span><span class="p">:</span>
+                    <span class="n">paths</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">route</span><span class="o">.</span><span class="n">path_format</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">path</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">security_schemes</span><span class="p">:</span>
+                    <span class="n">components</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;securitySchemes&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+                        <span class="n">security_schemes</span>
+                    <span class="p">)</span>
+                <span class="k">if</span> <span class="n">path_definitions</span><span class="p">:</span>
+                    <span class="n">definitions</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">path_definitions</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">definitions</span><span class="p">:</span>
+        <span class="n">components</span><span class="p">[</span><span class="s2">&quot;schemas&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">definitions</span><span class="p">[</span><span class="n">k</span><span class="p">]</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">definitions</span><span class="p">)}</span>
+    <span class="k">if</span> <span class="n">components</span><span class="p">:</span>
+        <span class="n">output</span><span class="p">[</span><span class="s2">&quot;components&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">components</span>
+    <span class="n">output</span><span class="p">[</span><span class="s2">&quot;paths&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">paths</span>
+    <span class="k">if</span> <span class="n">tags</span><span class="p">:</span>
+        <span class="n">output</span><span class="p">[</span><span class="s2">&quot;tags&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">tags</span>
+    <span class="k">return</span> <span class="n">jsonable_encoder</span><span class="p">(</span><span class="n">OpenAPI</span><span class="p">(</span><span class="o">**</span><span class="n">output</span><span class="p">),</span> <span class="n">by_alias</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">exclude_none</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>  <span class="c1"># type: ignore</span>
+</code></pre></div></td></tr></table></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="fastapi.openapi.utils.get_openapi_operation_metadata" class="doc doc-heading">
+get_openapi_operation_metadata
+
+
+<a href="#fastapi.openapi.utils.get_openapi_operation_metadata" class="headerlink" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="n">get_openapi_operation_metadata</span><span class="p">(</span>
+    <span class="o">*</span><span class="p">,</span> <span class="n">route</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">operation_ids</span>
+<span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+
+        <details class="quote">
+          <summary>Source code in <code>fastapi/openapi/utils.py</code></summary>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">169</span>
+<span class="normal">170</span>
+<span class="normal">171</span>
+<span class="normal">172</span>
+<span class="normal">173</span>
+<span class="normal">174</span>
+<span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span>
+<span class="normal">179</span>
+<span class="normal">180</span>
+<span class="normal">181</span>
+<span class="normal">182</span>
+<span class="normal">183</span>
+<span class="normal">184</span>
+<span class="normal">185</span>
+<span class="normal">186</span>
+<span class="normal">187</span>
+<span class="normal">188</span>
+<span class="normal">189</span>
+<span class="normal">190</span>
+<span class="normal">191</span>
+<span class="normal">192</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_openapi_operation_metadata</span><span class="p">(</span>
+    <span class="o">*</span><span class="p">,</span> <span class="n">route</span><span class="p">:</span> <span class="n">routing</span><span class="o">.</span><span class="n">APIRoute</span><span class="p">,</span> <span class="n">method</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">operation_ids</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]:</span>
+    <span class="n">operation</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">if</span> <span class="n">route</span><span class="o">.</span><span class="n">tags</span><span class="p">:</span>
+        <span class="n">operation</span><span class="p">[</span><span class="s2">&quot;tags&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">route</span><span class="o">.</span><span class="n">tags</span>
+    <span class="n">operation</span><span class="p">[</span><span class="s2">&quot;summary&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">generate_operation_summary</span><span class="p">(</span><span class="n">route</span><span class="o">=</span><span class="n">route</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">route</span><span class="o">.</span><span class="n">description</span><span class="p">:</span>
+        <span class="n">operation</span><span class="p">[</span><span class="s2">&quot;description&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">route</span><span class="o">.</span><span class="n">description</span>
+    <span class="n">operation_id</span> <span class="o">=</span> <span class="n">route</span><span class="o">.</span><span class="n">operation_id</span> <span class="ow">or</span> <span class="n">route</span><span class="o">.</span><span class="n">unique_id</span>
+    <span class="k">if</span> <span class="n">operation_id</span> <span class="ow">in</span> <span class="n">operation_ids</span><span class="p">:</span>
+        <span class="n">message</span> <span class="o">=</span> <span class="p">(</span>
+            <span class="sa">f</span><span class="s2">&quot;Duplicate Operation ID </span><span class="si">{</span><span class="n">operation_id</span><span class="si">}</span><span class="s2"> for function &quot;</span>
+            <span class="o">+</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">route</span><span class="o">.</span><span class="n">endpoint</span><span class="o">.</span><span class="vm">__name__</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="p">)</span>
+        <span class="n">file_name</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">route</span><span class="o">.</span><span class="n">endpoint</span><span class="p">,</span> <span class="s2">&quot;__globals__&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;__file__&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">file_name</span><span class="p">:</span>
+            <span class="n">message</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot; at </span><span class="si">{</span><span class="n">file_name</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="n">warnings</span><span class="o">.</span><span class="n">warn</span><span class="p">(</span><span class="n">message</span><span class="p">)</span>
+    <span class="n">operation_ids</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">operation_id</span><span class="p">)</span>
+    <span class="n">operation</span><span class="p">[</span><span class="s2">&quot;operationId&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">operation_id</span>
+    <span class="k">if</span> <span class="n">route</span><span class="o">.</span><span class="n">deprecated</span><span class="p">:</span>
+        <span class="n">operation</span><span class="p">[</span><span class="s2">&quot;deprecated&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">route</span><span class="o">.</span><span class="n">deprecated</span>
+    <span class="k">return</span> <span class="n">operation</span>
+</code></pre></div></td></tr></table></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="fastapi.openapi.utils.get_openapi_operation_parameters" class="doc doc-heading">
+get_openapi_operation_parameters
+
+
+<a href="#fastapi.openapi.utils.get_openapi_operation_parameters" class="headerlink" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="n">get_openapi_operation_parameters</span><span class="p">(</span>
+    <span class="o">*</span><span class="p">,</span> <span class="n">all_route_params</span><span class="p">,</span> <span class="n">model_name_map</span>
+<span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+
+        <details class="quote">
+          <summary>Source code in <code>fastapi/openapi/utils.py</code></summary>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span>
+<span class="normal">107</span>
+<span class="normal">108</span>
+<span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_openapi_operation_parameters</span><span class="p">(</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">all_route_params</span><span class="p">:</span> <span class="n">Sequence</span><span class="p">[</span><span class="n">ModelField</span><span class="p">],</span>
+    <span class="n">model_name_map</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">Type</span><span class="p">[</span><span class="n">BaseModel</span><span class="p">],</span> <span class="n">Type</span><span class="p">[</span><span class="n">Enum</span><span class="p">]],</span> <span class="nb">str</span><span class="p">],</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
+    <span class="n">parameters</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">all_route_params</span><span class="p">:</span>
+        <span class="n">field_info</span> <span class="o">=</span> <span class="n">param</span><span class="o">.</span><span class="n">field_info</span>
+        <span class="n">field_info</span> <span class="o">=</span> <span class="n">cast</span><span class="p">(</span><span class="n">Param</span><span class="p">,</span> <span class="n">field_info</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">field_info</span><span class="o">.</span><span class="n">include_in_schema</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">parameter</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="n">param</span><span class="o">.</span><span class="n">alias</span><span class="p">,</span>
+            <span class="s2">&quot;in&quot;</span><span class="p">:</span> <span class="n">field_info</span><span class="o">.</span><span class="n">in_</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+            <span class="s2">&quot;required&quot;</span><span class="p">:</span> <span class="n">param</span><span class="o">.</span><span class="n">required</span><span class="p">,</span>
+            <span class="s2">&quot;schema&quot;</span><span class="p">:</span> <span class="n">field_schema</span><span class="p">(</span>
+                <span class="n">param</span><span class="p">,</span> <span class="n">model_name_map</span><span class="o">=</span><span class="n">model_name_map</span><span class="p">,</span> <span class="n">ref_prefix</span><span class="o">=</span><span class="n">REF_PREFIX</span>
+            <span class="p">)[</span><span class="mi">0</span><span class="p">],</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="n">field_info</span><span class="o">.</span><span class="n">description</span><span class="p">:</span>
+            <span class="n">parameter</span><span class="p">[</span><span class="s2">&quot;description&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">field_info</span><span class="o">.</span><span class="n">description</span>
+        <span class="k">if</span> <span class="n">field_info</span><span class="o">.</span><span class="n">examples</span><span class="p">:</span>
+            <span class="n">parameter</span><span class="p">[</span><span class="s2">&quot;examples&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">jsonable_encoder</span><span class="p">(</span><span class="n">field_info</span><span class="o">.</span><span class="n">examples</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">field_info</span><span class="o">.</span><span class="n">example</span> <span class="o">!=</span> <span class="n">Undefined</span><span class="p">:</span>
+            <span class="n">parameter</span><span class="p">[</span><span class="s2">&quot;example&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">jsonable_encoder</span><span class="p">(</span><span class="n">field_info</span><span class="o">.</span><span class="n">example</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">field_info</span><span class="o">.</span><span class="n">deprecated</span><span class="p">:</span>
+            <span class="n">parameter</span><span class="p">[</span><span class="s2">&quot;deprecated&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">field_info</span><span class="o">.</span><span class="n">deprecated</span>
+        <span class="n">parameters</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">parameter</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">parameters</span>
+</code></pre></div></td></tr></table></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="fastapi.openapi.utils.get_openapi_operation_request_body" class="doc doc-heading">
+get_openapi_operation_request_body
+
+
+<a href="#fastapi.openapi.utils.get_openapi_operation_request_body" class="headerlink" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="n">get_openapi_operation_request_body</span><span class="p">(</span>
+    <span class="o">*</span><span class="p">,</span> <span class="n">body_field</span><span class="p">,</span> <span class="n">model_name_map</span>
+<span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+
+        <details class="quote">
+          <summary>Source code in <code>fastapi/openapi/utils.py</code></summary>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span>
+<span class="normal">143</span>
+<span class="normal">144</span>
+<span class="normal">145</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_openapi_operation_request_body</span><span class="p">(</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">body_field</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">ModelField</span><span class="p">],</span>
+    <span class="n">model_name_map</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">Type</span><span class="p">[</span><span class="n">BaseModel</span><span class="p">],</span> <span class="n">Type</span><span class="p">[</span><span class="n">Enum</span><span class="p">]],</span> <span class="nb">str</span><span class="p">],</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">body_field</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">None</span>
+    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">body_field</span><span class="p">,</span> <span class="n">ModelField</span><span class="p">)</span>
+    <span class="n">body_schema</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">field_schema</span><span class="p">(</span>
+        <span class="n">body_field</span><span class="p">,</span> <span class="n">model_name_map</span><span class="o">=</span><span class="n">model_name_map</span><span class="p">,</span> <span class="n">ref_prefix</span><span class="o">=</span><span class="n">REF_PREFIX</span>
+    <span class="p">)</span>
+    <span class="n">field_info</span> <span class="o">=</span> <span class="n">cast</span><span class="p">(</span><span class="n">Body</span><span class="p">,</span> <span class="n">body_field</span><span class="o">.</span><span class="n">field_info</span><span class="p">)</span>
+    <span class="n">request_media_type</span> <span class="o">=</span> <span class="n">field_info</span><span class="o">.</span><span class="n">media_type</span>
+    <span class="n">required</span> <span class="o">=</span> <span class="n">body_field</span><span class="o">.</span><span class="n">required</span>
+    <span class="n">request_body_oai</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">if</span> <span class="n">required</span><span class="p">:</span>
+        <span class="n">request_body_oai</span><span class="p">[</span><span class="s2">&quot;required&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">required</span>
+    <span class="n">request_media_content</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;schema&quot;</span><span class="p">:</span> <span class="n">body_schema</span><span class="p">}</span>
+    <span class="k">if</span> <span class="n">field_info</span><span class="o">.</span><span class="n">examples</span><span class="p">:</span>
+        <span class="n">request_media_content</span><span class="p">[</span><span class="s2">&quot;examples&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">jsonable_encoder</span><span class="p">(</span><span class="n">field_info</span><span class="o">.</span><span class="n">examples</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">field_info</span><span class="o">.</span><span class="n">example</span> <span class="o">!=</span> <span class="n">Undefined</span><span class="p">:</span>
+        <span class="n">request_media_content</span><span class="p">[</span><span class="s2">&quot;example&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">jsonable_encoder</span><span class="p">(</span><span class="n">field_info</span><span class="o">.</span><span class="n">example</span><span class="p">)</span>
+    <span class="n">request_body_oai</span><span class="p">[</span><span class="s2">&quot;content&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="n">request_media_type</span><span class="p">:</span> <span class="n">request_media_content</span><span class="p">}</span>
+    <span class="k">return</span> <span class="n">request_body_oai</span>
+</code></pre></div></td></tr></table></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="fastapi.openapi.utils.get_openapi_path" class="doc doc-heading">
+get_openapi_path
+
+
+<a href="#fastapi.openapi.utils.get_openapi_path" class="headerlink" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="n">get_openapi_path</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">route</span><span class="p">,</span> <span class="n">model_name_map</span><span class="p">,</span> <span class="n">operation_ids</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+
+        <details class="quote">
+          <summary>Source code in <code>fastapi/openapi/utils.py</code></summary>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span>
+<span class="normal">227</span>
+<span class="normal">228</span>
+<span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span>
+<span class="normal">233</span>
+<span class="normal">234</span>
+<span class="normal">235</span>
+<span class="normal">236</span>
+<span class="normal">237</span>
+<span class="normal">238</span>
+<span class="normal">239</span>
+<span class="normal">240</span>
+<span class="normal">241</span>
+<span class="normal">242</span>
+<span class="normal">243</span>
+<span class="normal">244</span>
+<span class="normal">245</span>
+<span class="normal">246</span>
+<span class="normal">247</span>
+<span class="normal">248</span>
+<span class="normal">249</span>
+<span class="normal">250</span>
+<span class="normal">251</span>
+<span class="normal">252</span>
+<span class="normal">253</span>
+<span class="normal">254</span>
+<span class="normal">255</span>
+<span class="normal">256</span>
+<span class="normal">257</span>
+<span class="normal">258</span>
+<span class="normal">259</span>
+<span class="normal">260</span>
+<span class="normal">261</span>
+<span class="normal">262</span>
+<span class="normal">263</span>
+<span class="normal">264</span>
+<span class="normal">265</span>
+<span class="normal">266</span>
+<span class="normal">267</span>
+<span class="normal">268</span>
+<span class="normal">269</span>
+<span class="normal">270</span>
+<span class="normal">271</span>
+<span class="normal">272</span>
+<span class="normal">273</span>
+<span class="normal">274</span>
+<span class="normal">275</span>
+<span class="normal">276</span>
+<span class="normal">277</span>
+<span class="normal">278</span>
+<span class="normal">279</span>
+<span class="normal">280</span>
+<span class="normal">281</span>
+<span class="normal">282</span>
+<span class="normal">283</span>
+<span class="normal">284</span>
+<span class="normal">285</span>
+<span class="normal">286</span>
+<span class="normal">287</span>
+<span class="normal">288</span>
+<span class="normal">289</span>
+<span class="normal">290</span>
+<span class="normal">291</span>
+<span class="normal">292</span>
+<span class="normal">293</span>
+<span class="normal">294</span>
+<span class="normal">295</span>
+<span class="normal">296</span>
+<span class="normal">297</span>
+<span class="normal">298</span>
+<span class="normal">299</span>
+<span class="normal">300</span>
+<span class="normal">301</span>
+<span class="normal">302</span>
+<span class="normal">303</span>
+<span class="normal">304</span>
+<span class="normal">305</span>
+<span class="normal">306</span>
+<span class="normal">307</span>
+<span class="normal">308</span>
+<span class="normal">309</span>
+<span class="normal">310</span>
+<span class="normal">311</span>
+<span class="normal">312</span>
+<span class="normal">313</span>
+<span class="normal">314</span>
+<span class="normal">315</span>
+<span class="normal">316</span>
+<span class="normal">317</span>
+<span class="normal">318</span>
+<span class="normal">319</span>
+<span class="normal">320</span>
+<span class="normal">321</span>
+<span class="normal">322</span>
+<span class="normal">323</span>
+<span class="normal">324</span>
+<span class="normal">325</span>
+<span class="normal">326</span>
+<span class="normal">327</span>
+<span class="normal">328</span>
+<span class="normal">329</span>
+<span class="normal">330</span>
+<span class="normal">331</span>
+<span class="normal">332</span>
+<span class="normal">333</span>
+<span class="normal">334</span>
+<span class="normal">335</span>
+<span class="normal">336</span>
+<span class="normal">337</span>
+<span class="normal">338</span>
+<span class="normal">339</span>
+<span class="normal">340</span>
+<span class="normal">341</span>
+<span class="normal">342</span>
+<span class="normal">343</span>
+<span class="normal">344</span>
+<span class="normal">345</span>
+<span class="normal">346</span>
+<span class="normal">347</span>
+<span class="normal">348</span>
+<span class="normal">349</span>
+<span class="normal">350</span>
+<span class="normal">351</span>
+<span class="normal">352</span>
+<span class="normal">353</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_openapi_path</span><span class="p">(</span>
+    <span class="o">*</span><span class="p">,</span> <span class="n">route</span><span class="p">:</span> <span class="n">routing</span><span class="o">.</span><span class="n">APIRoute</span><span class="p">,</span> <span class="n">model_name_map</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">type</span><span class="p">,</span> <span class="nb">str</span><span class="p">],</span> <span class="n">operation_ids</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]:</span>
+    <span class="n">path</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">security_schemes</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">definitions</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="k">assert</span> <span class="n">route</span><span class="o">.</span><span class="n">methods</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;Methods must be a list&quot;</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">route</span><span class="o">.</span><span class="n">response_class</span><span class="p">,</span> <span class="n">DefaultPlaceholder</span><span class="p">):</span>
+        <span class="n">current_response_class</span><span class="p">:</span> <span class="n">Type</span><span class="p">[</span><span class="n">Response</span><span class="p">]</span> <span class="o">=</span> <span class="n">route</span><span class="o">.</span><span class="n">response_class</span><span class="o">.</span><span class="n">value</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">current_response_class</span> <span class="o">=</span> <span class="n">route</span><span class="o">.</span><span class="n">response_class</span>
+    <span class="k">assert</span> <span class="n">current_response_class</span><span class="p">,</span> <span class="s2">&quot;A response class is needed to generate OpenAPI&quot;</span>
+    <span class="n">route_response_media_type</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">current_response_class</span><span class="o">.</span><span class="n">media_type</span>
+    <span class="k">if</span> <span class="n">route</span><span class="o">.</span><span class="n">include_in_schema</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">method</span> <span class="ow">in</span> <span class="n">route</span><span class="o">.</span><span class="n">methods</span><span class="p">:</span>
+            <span class="n">operation</span> <span class="o">=</span> <span class="n">get_openapi_operation_metadata</span><span class="p">(</span>
+                <span class="n">route</span><span class="o">=</span><span class="n">route</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">,</span> <span class="n">operation_ids</span><span class="o">=</span><span class="n">operation_ids</span>
+            <span class="p">)</span>
+            <span class="n">parameters</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="n">flat_dependant</span> <span class="o">=</span> <span class="n">get_flat_dependant</span><span class="p">(</span><span class="n">route</span><span class="o">.</span><span class="n">dependant</span><span class="p">,</span> <span class="n">skip_repeats</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">security_definitions</span><span class="p">,</span> <span class="n">operation_security</span> <span class="o">=</span> <span class="n">get_openapi_security_definitions</span><span class="p">(</span>
+                <span class="n">flat_dependant</span><span class="o">=</span><span class="n">flat_dependant</span>
+            <span class="p">)</span>
+            <span class="k">if</span> <span class="n">operation_security</span><span class="p">:</span>
+                <span class="n">operation</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;security&quot;</span><span class="p">,</span> <span class="p">[])</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">operation_security</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">security_definitions</span><span class="p">:</span>
+                <span class="n">security_schemes</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">security_definitions</span><span class="p">)</span>
+            <span class="n">all_route_params</span> <span class="o">=</span> <span class="n">get_flat_params</span><span class="p">(</span><span class="n">route</span><span class="o">.</span><span class="n">dependant</span><span class="p">)</span>
+            <span class="n">operation_parameters</span> <span class="o">=</span> <span class="n">get_openapi_operation_parameters</span><span class="p">(</span>
+                <span class="n">all_route_params</span><span class="o">=</span><span class="n">all_route_params</span><span class="p">,</span> <span class="n">model_name_map</span><span class="o">=</span><span class="n">model_name_map</span>
+            <span class="p">)</span>
+            <span class="n">parameters</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">operation_parameters</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">parameters</span><span class="p">:</span>
+                <span class="n">operation</span><span class="p">[</span><span class="s2">&quot;parameters&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span>
+                    <span class="p">{</span><span class="n">param</span><span class="p">[</span><span class="s2">&quot;name&quot;</span><span class="p">]:</span> <span class="n">param</span> <span class="k">for</span> <span class="n">param</span> <span class="ow">in</span> <span class="n">parameters</span><span class="p">}</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
+                <span class="p">)</span>
+            <span class="k">if</span> <span class="n">method</span> <span class="ow">in</span> <span class="n">METHODS_WITH_BODY</span><span class="p">:</span>
+                <span class="n">request_body_oai</span> <span class="o">=</span> <span class="n">get_openapi_operation_request_body</span><span class="p">(</span>
+                    <span class="n">body_field</span><span class="o">=</span><span class="n">route</span><span class="o">.</span><span class="n">body_field</span><span class="p">,</span> <span class="n">model_name_map</span><span class="o">=</span><span class="n">model_name_map</span>
+                <span class="p">)</span>
+                <span class="k">if</span> <span class="n">request_body_oai</span><span class="p">:</span>
+                    <span class="n">operation</span><span class="p">[</span><span class="s2">&quot;requestBody&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">request_body_oai</span>
+            <span class="k">if</span> <span class="n">route</span><span class="o">.</span><span class="n">callbacks</span><span class="p">:</span>
+                <span class="n">callbacks</span> <span class="o">=</span> <span class="p">{}</span>
+                <span class="k">for</span> <span class="n">callback</span> <span class="ow">in</span> <span class="n">route</span><span class="o">.</span><span class="n">callbacks</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">callback</span><span class="p">,</span> <span class="n">routing</span><span class="o">.</span><span class="n">APIRoute</span><span class="p">):</span>
+                        <span class="p">(</span>
+                            <span class="n">cb_path</span><span class="p">,</span>
+                            <span class="n">cb_security_schemes</span><span class="p">,</span>
+                            <span class="n">cb_definitions</span><span class="p">,</span>
+                        <span class="p">)</span> <span class="o">=</span> <span class="n">get_openapi_path</span><span class="p">(</span>
+                            <span class="n">route</span><span class="o">=</span><span class="n">callback</span><span class="p">,</span>
+                            <span class="n">model_name_map</span><span class="o">=</span><span class="n">model_name_map</span><span class="p">,</span>
+                            <span class="n">operation_ids</span><span class="o">=</span><span class="n">operation_ids</span><span class="p">,</span>
+                        <span class="p">)</span>
+                        <span class="n">callbacks</span><span class="p">[</span><span class="n">callback</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="n">callback</span><span class="o">.</span><span class="n">path</span><span class="p">:</span> <span class="n">cb_path</span><span class="p">}</span>
+                <span class="n">operation</span><span class="p">[</span><span class="s2">&quot;callbacks&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">callbacks</span>
+            <span class="k">if</span> <span class="n">route</span><span class="o">.</span><span class="n">status_code</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">status_code</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">route</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="c1"># It would probably make more sense for all response classes to have an</span>
+                <span class="c1"># explicit default status_code, and to extract it from them, instead of</span>
+                <span class="c1"># doing this inspection tricks, that would probably be in the future</span>
+                <span class="c1"># TODO: probably make status_code a default class attribute for all</span>
+                <span class="c1"># responses in Starlette</span>
+                <span class="n">response_signature</span> <span class="o">=</span> <span class="n">inspect</span><span class="o">.</span><span class="n">signature</span><span class="p">(</span><span class="n">current_response_class</span><span class="o">.</span><span class="fm">__init__</span><span class="p">)</span>
+                <span class="n">status_code_param</span> <span class="o">=</span> <span class="n">response_signature</span><span class="o">.</span><span class="n">parameters</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;status_code&quot;</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">status_code_param</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">status_code_param</span><span class="o">.</span><span class="n">default</span><span class="p">,</span> <span class="nb">int</span><span class="p">):</span>
+                        <span class="n">status_code</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">status_code_param</span><span class="o">.</span><span class="n">default</span><span class="p">)</span>
+            <span class="n">operation</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;responses&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">status_code</span><span class="p">,</span> <span class="p">{})[</span>
+                <span class="s2">&quot;description&quot;</span>
+            <span class="p">]</span> <span class="o">=</span> <span class="n">route</span><span class="o">.</span><span class="n">response_description</span>
+            <span class="k">if</span> <span class="p">(</span>
+                <span class="n">route_response_media_type</span>
+                <span class="ow">and</span> <span class="n">route</span><span class="o">.</span><span class="n">status_code</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">STATUS_CODES_WITH_NO_BODY</span>
+            <span class="p">):</span>
+                <span class="n">response_schema</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">}</span>
+                <span class="k">if</span> <span class="n">lenient_issubclass</span><span class="p">(</span><span class="n">current_response_class</span><span class="p">,</span> <span class="n">JSONResponse</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="n">route</span><span class="o">.</span><span class="n">response_field</span><span class="p">:</span>
+                        <span class="n">response_schema</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">field_schema</span><span class="p">(</span>
+                            <span class="n">route</span><span class="o">.</span><span class="n">response_field</span><span class="p">,</span>
+                            <span class="n">model_name_map</span><span class="o">=</span><span class="n">model_name_map</span><span class="p">,</span>
+                            <span class="n">ref_prefix</span><span class="o">=</span><span class="n">REF_PREFIX</span><span class="p">,</span>
+                        <span class="p">)</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">response_schema</span> <span class="o">=</span> <span class="p">{}</span>
+                <span class="n">operation</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;responses&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span>
+                    <span class="n">status_code</span><span class="p">,</span> <span class="p">{}</span>
+                <span class="p">)</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;content&quot;</span><span class="p">,</span> <span class="p">{})</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">route_response_media_type</span><span class="p">,</span> <span class="p">{})[</span>
+                    <span class="s2">&quot;schema&quot;</span>
+                <span class="p">]</span> <span class="o">=</span> <span class="n">response_schema</span>
+            <span class="k">if</span> <span class="n">route</span><span class="o">.</span><span class="n">responses</span><span class="p">:</span>
+                <span class="n">operation_responses</span> <span class="o">=</span> <span class="n">operation</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;responses&quot;</span><span class="p">,</span> <span class="p">{})</span>
+                <span class="k">for</span> <span class="p">(</span>
+                    <span class="n">additional_status_code</span><span class="p">,</span>
+                    <span class="n">additional_response</span><span class="p">,</span>
+                <span class="p">)</span> <span class="ow">in</span> <span class="n">route</span><span class="o">.</span><span class="n">responses</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                    <span class="n">process_response</span> <span class="o">=</span> <span class="n">additional_response</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+                    <span class="n">process_response</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="s2">&quot;model&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+                    <span class="n">status_code_key</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">additional_status_code</span><span class="p">)</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+                    <span class="k">if</span> <span class="n">status_code_key</span> <span class="o">==</span> <span class="s2">&quot;DEFAULT&quot;</span><span class="p">:</span>
+                        <span class="n">status_code_key</span> <span class="o">=</span> <span class="s2">&quot;default&quot;</span>
+                    <span class="n">openapi_response</span> <span class="o">=</span> <span class="n">operation_responses</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span>
+                        <span class="n">status_code_key</span><span class="p">,</span> <span class="p">{}</span>
+                    <span class="p">)</span>
+                    <span class="k">assert</span> <span class="nb">isinstance</span><span class="p">(</span>
+                        <span class="n">process_response</span><span class="p">,</span> <span class="nb">dict</span>
+                    <span class="p">),</span> <span class="s2">&quot;An additional response must be a dict&quot;</span>
+                    <span class="n">field</span> <span class="o">=</span> <span class="n">route</span><span class="o">.</span><span class="n">response_fields</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">additional_status_code</span><span class="p">)</span>
+                    <span class="n">additional_field_schema</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>
+                    <span class="k">if</span> <span class="n">field</span><span class="p">:</span>
+                        <span class="n">additional_field_schema</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">_</span> <span class="o">=</span> <span class="n">field_schema</span><span class="p">(</span>
+                            <span class="n">field</span><span class="p">,</span> <span class="n">model_name_map</span><span class="o">=</span><span class="n">model_name_map</span><span class="p">,</span> <span class="n">ref_prefix</span><span class="o">=</span><span class="n">REF_PREFIX</span>
+                        <span class="p">)</span>
+                        <span class="n">media_type</span> <span class="o">=</span> <span class="n">route_response_media_type</span> <span class="ow">or</span> <span class="s2">&quot;application/json&quot;</span>
+                        <span class="n">additional_schema</span> <span class="o">=</span> <span class="p">(</span>
+                            <span class="n">process_response</span><span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;content&quot;</span><span class="p">,</span> <span class="p">{})</span>
+                            <span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="n">media_type</span><span class="p">,</span> <span class="p">{})</span>
+                            <span class="o">.</span><span class="n">setdefault</span><span class="p">(</span><span class="s2">&quot;schema&quot;</span><span class="p">,</span> <span class="p">{})</span>
+                        <span class="p">)</span>
+                        <span class="n">deep_dict_update</span><span class="p">(</span><span class="n">additional_schema</span><span class="p">,</span> <span class="n">additional_field_schema</span><span class="p">)</span>
+                    <span class="n">status_text</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="n">status_code_ranges</span><span class="o">.</span><span class="n">get</span><span class="p">(</span>
+                        <span class="nb">str</span><span class="p">(</span><span class="n">additional_status_code</span><span class="p">)</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span>
+                    <span class="p">)</span> <span class="ow">or</span> <span class="n">http</span><span class="o">.</span><span class="n">client</span><span class="o">.</span><span class="n">responses</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">additional_status_code</span><span class="p">))</span>
+                    <span class="n">description</span> <span class="o">=</span> <span class="p">(</span>
+                        <span class="n">process_response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;description&quot;</span><span class="p">)</span>
+                        <span class="ow">or</span> <span class="n">openapi_response</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;description&quot;</span><span class="p">)</span>
+                        <span class="ow">or</span> <span class="n">status_text</span>
+                        <span class="ow">or</span> <span class="s2">&quot;Additional Response&quot;</span>
+                    <span class="p">)</span>
+                    <span class="n">deep_dict_update</span><span class="p">(</span><span class="n">openapi_response</span><span class="p">,</span> <span class="n">process_response</span><span class="p">)</span>
+                    <span class="n">openapi_response</span><span class="p">[</span><span class="s2">&quot;description&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">description</span>
+            <span class="n">http422</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">HTTP_422_UNPROCESSABLE_ENTITY</span><span class="p">)</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">all_route_params</span> <span class="ow">or</span> <span class="n">route</span><span class="o">.</span><span class="n">body_field</span><span class="p">)</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">any</span><span class="p">(</span>
+                <span class="p">[</span>
+                    <span class="n">status</span> <span class="ow">in</span> <span class="n">operation</span><span class="p">[</span><span class="s2">&quot;responses&quot;</span><span class="p">]</span>
+                    <span class="k">for</span> <span class="n">status</span> <span class="ow">in</span> <span class="p">[</span><span class="n">http422</span><span class="p">,</span> <span class="s2">&quot;4XX&quot;</span><span class="p">,</span> <span class="s2">&quot;default&quot;</span><span class="p">]</span>
+                <span class="p">]</span>
+            <span class="p">):</span>
+                <span class="n">operation</span><span class="p">[</span><span class="s2">&quot;responses&quot;</span><span class="p">][</span><span class="n">http422</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="s2">&quot;description&quot;</span><span class="p">:</span> <span class="s2">&quot;Validation Error&quot;</span><span class="p">,</span>
+                    <span class="s2">&quot;content&quot;</span><span class="p">:</span> <span class="p">{</span>
+                        <span class="s2">&quot;application/json&quot;</span><span class="p">:</span> <span class="p">{</span>
+                            <span class="s2">&quot;schema&quot;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;$ref&quot;</span><span class="p">:</span> <span class="n">REF_PREFIX</span> <span class="o">+</span> <span class="s2">&quot;HTTPValidationError&quot;</span><span class="p">}</span>
+                        <span class="p">}</span>
+                    <span class="p">},</span>
+                <span class="p">}</span>
+                <span class="k">if</span> <span class="s2">&quot;ValidationError&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">definitions</span><span class="p">:</span>
+                    <span class="n">definitions</span><span class="o">.</span><span class="n">update</span><span class="p">(</span>
+                        <span class="p">{</span>
+                            <span class="s2">&quot;ValidationError&quot;</span><span class="p">:</span> <span class="n">validation_error_definition</span><span class="p">,</span>
+                            <span class="s2">&quot;HTTPValidationError&quot;</span><span class="p">:</span> <span class="n">validation_error_response_definition</span><span class="p">,</span>
+                        <span class="p">}</span>
+                    <span class="p">)</span>
+            <span class="k">if</span> <span class="n">route</span><span class="o">.</span><span class="n">openapi_extra</span><span class="p">:</span>
+                <span class="n">deep_dict_update</span><span class="p">(</span><span class="n">operation</span><span class="p">,</span> <span class="n">route</span><span class="o">.</span><span class="n">openapi_extra</span><span class="p">)</span>
+            <span class="n">path</span><span class="p">[</span><span class="n">method</span><span class="o">.</span><span class="n">lower</span><span class="p">()]</span> <span class="o">=</span> <span class="n">operation</span>
+    <span class="k">return</span> <span class="n">path</span><span class="p">,</span> <span class="n">security_schemes</span><span class="p">,</span> <span class="n">definitions</span>
+</code></pre></div></td></tr></table></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+  <div class="doc doc-object doc-function">
+
+
+
+<h2 id="fastapi.openapi.utils.get_openapi_security_definitions" class="doc doc-heading">
+get_openapi_security_definitions
+
+
+<a href="#fastapi.openapi.utils.get_openapi_security_definitions" class="headerlink" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="n">get_openapi_security_definitions</span><span class="p">(</span><span class="n">flat_dependant</span><span class="p">)</span>
+</code></pre></div>
+
+    <div class="doc doc-contents ">
+
+
+        <details class="quote">
+          <summary>Source code in <code>fastapi/openapi/utils.py</code></summary>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span>
+<span class="normal">84</span>
+<span class="normal">85</span>
+<span class="normal">86</span>
+<span class="normal">87</span>
+<span class="normal">88</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">get_openapi_security_definitions</span><span class="p">(</span>
+    <span class="n">flat_dependant</span><span class="p">:</span> <span class="n">Dependant</span><span class="p">,</span>
+<span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">],</span> <span class="n">List</span><span class="p">[</span><span class="n">Dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">Any</span><span class="p">]]]:</span>
+    <span class="n">security_definitions</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="n">operation_security</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">security_requirement</span> <span class="ow">in</span> <span class="n">flat_dependant</span><span class="o">.</span><span class="n">security_requirements</span><span class="p">:</span>
+        <span class="n">security_definition</span> <span class="o">=</span> <span class="n">jsonable_encoder</span><span class="p">(</span>
+            <span class="n">security_requirement</span><span class="o">.</span><span class="n">security_scheme</span><span class="o">.</span><span class="n">model</span><span class="p">,</span>
+            <span class="n">by_alias</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+            <span class="n">exclude_none</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">security_name</span> <span class="o">=</span> <span class="n">security_requirement</span><span class="o">.</span><span class="n">security_scheme</span><span class="o">.</span><span class="n">scheme_name</span>
+        <span class="n">security_definitions</span><span class="p">[</span><span class="n">security_name</span><span class="p">]</span> <span class="o">=</span> <span class="n">security_definition</span>
+        <span class="n">operation_security</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="n">security_name</span><span class="p">:</span> <span class="n">security_requirement</span><span class="o">.</span><span class="n">scopes</span><span class="p">})</span>
+    <span class="k">return</span> <span class="n">security_definitions</span><span class="p">,</span> <span class="n">operation_security</span>
+</code></pre></div></td></tr></table></div>
+        </details>
+    </div>
+
+  </div>
+
+
+
+
+
+  </div>
+
+    </div>
+
+  </div>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../models/" class="md-footer__link md-footer__link--prev" aria-label="Previous: models" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              models
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../param_functions/" class="md-footer__link md-footer__link--next" aria-label="Next: param_functions" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              param_functions
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.2a1c317c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.a6c66575.min.js"></script>
+      
+    
+  </body>
+</html>
